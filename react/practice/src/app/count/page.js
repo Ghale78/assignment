@@ -1,7 +1,7 @@
-'use client'
+"use client"
 import React,{useState} from 'react'
 import {Button} from "@nextui-org/react";
-  const page = () => {
+  const calculator = () => {
     // why created state? 
     // let num= 0 will cahnge but not update in the UI
     let [num, setNum] = useState('')
@@ -10,7 +10,7 @@ import {Button} from "@nextui-org/react";
         ['7','8','9'],
         ['4','5','6'],
         ['1','2','3'],
-        ['0']
+        ['0','.','00']
         ]
     
     const symbols = ['+','-','/','*','=','⌫']
@@ -38,20 +38,26 @@ import {Button} from "@nextui-org/react";
         if(symbol === '='){
                 const output = eval(num)
                 setNum(output)
-        }else{
+        }else if (symbol === '⌫') {
+          setNum(num.slice(0, -1));
+        }
+        else if (symbol === 'AC') {
+          setNum('');
+      } else{
           setNum(num+symbol)
         }
     }
 
     return (
-      <div className='bg-black'>
-      <div className='bg-gray-700 w-14 text-white text-4xl'>
+      <div className='bg-stone-950 w-60 rounded '>
+      <div className=' text-white text-4xl w-auto '>
          {num}
       </div>
       <div className='flex'>
       <div className='flex-col'>
       {generateDigits()}
-      <button className='m-2 w-10 h-10 bg-gray-700 text-2xl text-white text-center rounded-lg'>AC</button>
+      <button className='m-2 p-0 w-10 h-10 bg-gray-700 text-2xl text-white text-center rounded-lg'onClick={() => 
+      handleSymbolChange('AC')}>AC</button>
      
     
       </div>
@@ -59,7 +65,7 @@ import {Button} from "@nextui-org/react";
       {symbols.map((item)=>{
         return <div 
         onClick={()=>handleSymbolChange(item)}
-        className=' m-2 w-10 h-10 bg-orange-700 text-2xl text-white text-center rounded-lg'>{item}</div>
+        className=' m-2 w-10 h-9 p-0 bg-orange-700 text-2xl text-white text-center rounded-lg'>{item}</div>
       })}
       </div>
       </div>
@@ -68,4 +74,4 @@ import {Button} from "@nextui-org/react";
     )
   }
 
-export default page
+export default calculator
