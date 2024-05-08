@@ -1,15 +1,14 @@
 
 // Q1 calculate length of array and console log
 // expected output is 3
-const z = [3,5,2]
-console.log(z.length)
+const l = [3,5,2]
+console.log(l.length)
   
 // Q2 reverse the array and console log
 // xpected output [2,5,3]
 const a =[3,5,2]
 console.log(a)
 arr.reverse()
-
 // /Q3 join the array and console log
 // expected output 352
 const arr =[3,5,2]
