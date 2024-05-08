@@ -10,7 +10,6 @@ const CustomNavbar=(props)=> {
   return (
     <Navbar>
       <NavbarBrand>
-       
             <Logo />
       </NavbarBrand>
       <NavbarContent className="flex gap-4" justify="center">
