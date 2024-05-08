@@ -60,7 +60,7 @@ const SignupForm = () => {
       className="max-w-xs"
     />
       {formik.errors.lastName}
-      <label htmlFor="email">Email Address</label>
+      <label htmlFor="email">Email</label>
       <Input
       isClearable
       type="email"

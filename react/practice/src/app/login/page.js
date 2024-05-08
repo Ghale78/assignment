@@ -2,7 +2,8 @@
 import CustomNavbar from "@/components/navbar/page";
 import {Input , Button} from "@nextui-org/react";
 import Link from "next/link";
-
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 const login = () => {
   const variants = ["flat", "bordered", "underlined", "faded"];
   return (
