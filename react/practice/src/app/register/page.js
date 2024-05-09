@@ -63,6 +63,10 @@ const register = () => {
       name="firstName"
       value={formik.values.firstName}
       className="max-w-xs"
+      onClear={()=>{
+        formik.setFieldValue("firstName", '')
+      }
+    }
   
       
     />
@@ -76,6 +80,10 @@ const register = () => {
       name="LastName"
       value={formik.values.LastName}
       className="max-w-xs"
+      onClear={()=>{
+        formik.setFieldValue("LastName", '')
+      }
+    }
     />
       {formik.errors.lastName} 
       <label htmlFor="email"></label>
@@ -88,8 +96,10 @@ const register = () => {
       name="email"
       value={formik.values.email}
       defaultValue=""
-      onClear={() => console.log("input cleared")}
       className="max-w-xs"
+      onClear={()=>{
+        formik.setFieldValue("firstName", '')
+      }}
     />
 {formik.errors.email}
 <label htmlFor="Password"></label>
@@ -101,8 +111,10 @@ const register = () => {
       onChange={formik.handleChange}
       name="password"
       value={formik.values.password}
-      onClear={() => console.log("input cleared")}
-      className="max-w-xs"   
+      className="max-w-xs"  
+      onClear={()=>{
+        formik.setFieldValue("firstName", '')
+      }} 
     />
     {formik.errors.password}
     <Button color="primary" variant="shadow">

@@ -50,8 +50,10 @@ const login = () => {
       name="email"
       value={formik.values.email}
       defaultValue="junior@nextui.org"
-      onClear={() => console.log("input cleared")}
       className="max-w-xs"
+      onClear={()=>{
+        formik.setFieldValue("email", '')
+      }}
     />
 
 {formik.errors.email}
@@ -63,8 +65,10 @@ const login = () => {
       onChange={formik.handleChange}
       name="password"
       value={formik.values.password}    
-      onClear={() => console.log("input cleared")}
       className="max-w-xs"
+      onClear={()=>{
+        formik.setFieldValue("password", '')
+      }}
     />
        {formik.errors.password}
 
