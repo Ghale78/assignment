@@ -81,18 +81,15 @@ const SignupForm = () => {
       type="password"
       label="Password"
       variant="bordered"
-      onChange={formik.handleChange}
       name="password"
+      onChange={formik.handleChange} 
       value={formik.values.password}
       placeholder="Enter your password"
       onClear={() => console.log("input cleared")}
-      className="max-w-xs"
-    /> 
+      className="max-w-xs"/> 
        {formik.errors.password}
       <button type="submit">Submit</button>
     </form>
   );
 };
-
-
 export default SignupForm

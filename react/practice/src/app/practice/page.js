@@ -1,6 +1,6 @@
 'use client'
 import {Button, Input } from "@nextui-org/react";
-import NavBar from "@/components/navbar/page";
+// import NavBar from "@/components/navbar/page";
 import Link from "next/link";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -49,7 +49,7 @@ const register = () => {
 
   return (
     <div >
-       <NavBar/>
+      {/* <NavBar/> */}
     <div className="flex justify-center">
     <div className='border border-black m-7 w-72 p-4 rounded-lg'>
     
@@ -63,8 +63,6 @@ const register = () => {
       name="firstName"
       value={formik.values.firstName}
       className="max-w-xs"
-  
-      
     />
         {formik.errors.firstName} 
         <label htmlFor="LastName"></label>     
